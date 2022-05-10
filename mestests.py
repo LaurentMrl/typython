@@ -31,7 +31,7 @@ def compareTypes(args, defaultArgs):
         elif defaultArgs[index] is not None and type(newArgs[index])!=(defaultArgs[index]):
             raise Exception(f"Error à l'argument typé numéro {index+1}, on demande {(defaultArgs[index])} alors qu'on à reçu un type {type(newArgs[index])}")
 
-def myfunc(sah, ui=None, text=Union[int,str], nbr=int):
+def myfunc(sah, ui=None, text=int|str, nbr=int):
     mesArgs=list(locals().values())
     defaultArgs=myfunc.__defaults__
     compareTypes(mesArgs, defaultArgs)
